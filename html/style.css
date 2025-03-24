@@ -1,71 +1,102 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-html {
-    overflow: hidden;
-    font-family: "Poppins", sans-serif;
+:root {
+    --progress-color: #d32f2f;  /* Mooie blauwe tint */
+    --progress-secondary: #f44336;  /* Donkerder blauw voor gradient */
+    --progress-bg: rgba(241, 248, 255, 0.3);  /* Zeer lichte blauwe achtergrond */
+    --text-color: #2c3e50;  /* Donker blauwgrijs voor tekst */
+    --container-bg: #ffdad6;  /* Licht witte achtergrond */
+    --container-border: rgba(52, 152, 219, 0.2);  /* Subtiele blauwe border */
 }
 
-body {
-    background: transparent !important;
+html, body {
+    overflow: hidden;
     margin: 0;
     padding: 0;
-    overflow: hidden;
     height: 100%;
     width: 100%;
+    font-family: 'Poppins', sans-serif;
 }
 
 .progress-container {
     display: none;
-    z-index: 5;
-    color: #fff;
-    width: 15%;
     position: fixed;
-    bottom: 15%;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: "Poppins", sans-serif;
+    bottom: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20%;
+    min-width: 250px;
+    max-width: 300px;
+    background: var(--container-bg);
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.15);
+    z-index: 1000;
+    overflow: hidden;
+    border: 1px solid var(--container-border);
 }
 
 .progress-labels {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 8px;
+    color: var(--text-color);
 }
 
 #progress-label {
-    font-size: 1.3vh;
-    line-height: 4vh;
-    position: relative;
-    color: #ffffff;
-    z-index: 10;
-    font-weight: bold;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 70%;
 }
 
 #progress-percentage {
-    font-size: 1.3vh;
-    line-height: 4vh;
-    position: relative;
-    color: #ffffff;
-    z-index: 10;
-    font-weight: bold;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .progress-bar-container {
-    background: rgba(0, 0, 0, 0.246);
-    height: 0.5vh;
-    position: relative;
-    display: block;
-    border-radius: 2px;
+    background: var(--progress-bg);
+    height: 6px;
+    border-radius: 3px;
+    overflow: hidden;
 }
 
 #progress-bar {
-    background-color: #dc143c;
+    background: linear-gradient(90deg, var(--progress-color), var(--progress-secondary));
     width: 0%;
-    height: 0.5vh;
-    border-radius: 2px;
-    transition: width 0.3s;
-    transition-timing-function: ease-out;
-    box-shadow: 0 0 10px rgba(220, 20, 60, 0.6);
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.1s ease-out;
+    position: relative;
+}
+
+#progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+              rgba(255,255,255,0) 0%, 
+              rgba(255,255,255,0.4) 50%, 
+              rgba(255,255,255,0) 100%);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.cancelled .progress-labels {
+    color: #e74c3c;  /* Rood voor cancelled state */
+}
+
+.cancelled #progress-bar {
+    background: linear-gradient(90deg, #e74c3c, #c0392b);  /* Rode gradient voor cancelled */
 }
