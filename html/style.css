@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 :root {
-    --progress-color: #d32f2f;  /* Mooie blauwe tint */
-    --progress-secondary: #f44336;  /* Donkerder blauw voor gradient */
-    --progress-bg: rgba(241, 248, 255, 0.3);  /* Zeer lichte blauwe achtergrond */
-    --text-color: #2c3e50;  /* Donker blauwgrijs voor tekst */
-    --container-bg: #ffdad6;  /* Licht witte achtergrond */
-    --container-border: rgba(52, 152, 219, 0.2);  /* Subtiele blauwe border */
+    --progress-color: #d32f2f;  /* Beautiful blue shade */
+    --progress-secondary: #f44336;  /* Darker blue for gradient */
+    --progress-bg: rgba(241, 248, 255, 0.3);  /* Very light blue background */
+    --text-color: #2c3e50;  /* Dark blue-gray for text */
+    --container-bg: #ffdad6;  /* Light white background */
+    --container-border: rgba(52, 152, 219, 0.2);  /* Subtle blue border */
 }
 
 html, body {
