@@ -2,7 +2,7 @@
 
 Dependency for creating progressbars in QBCore.
 
-# Preview of my reworked the progressbar.
+# Preview of my reworked progressbar.
 
 ![alt text](<New Progressbar.png>)
 
