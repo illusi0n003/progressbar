@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 :root {
-    --progress-color: #d32f2f;  /* Beautiful blue shade */
-    --progress-secondary: #f44336;  /* Darker blue for gradient */
-    --progress-bg: rgba(241, 248, 255, 0.3);  /* Very light blue background */
+    --progress-color: #d32f2f;  /* Deep red */
+    --progress-secondary: #f44336;  /* Red */
+    --progress-bg: rgba(241, 248, 255, 0.3);  /* Very light blue-white background */
     --text-color: #2c3e50;  /* Dark blue-gray for text */
-    --container-bg: #ffdad6;  /* Light white background */
+    --container-bg: #ffdad6;  /* Light pink background */
     --container-border: rgba(52, 152, 219, 0.2);  /* Subtle blue border */
 }
 
