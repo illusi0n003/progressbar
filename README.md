@@ -3,6 +3,10 @@
 Dependency for creating progressbars in QBCore.
 Reworked the progressbar.
 
+# Preview
+
+![alt text](<New Progressbar.png>)
+
 # Usage
 
 ## QB-Core Functions
